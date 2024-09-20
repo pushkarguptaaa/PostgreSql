@@ -1,5 +1,6 @@
 import { Client } from 'pg'
 import { DB_URL } from './config';
+import { createUser, getUser } from './db/user';
 
 export const client = new Client({
     connectionString: DB_URL
@@ -38,6 +39,8 @@ async function createTables(){
 client.connect()
     .then(() => {
         console.log('Connected to the database')
-        createTables()
     })
     .catch(err => console.error('Database connection error', err));
+
+// createUser("uhtu", "jfkj", "Pushkar")
+getUser(1)
