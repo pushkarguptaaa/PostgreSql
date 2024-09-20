@@ -8,7 +8,7 @@ export async function createUser(username: string, password: string, name: strin
 
     try{
         const res = await client.query(query, values)
-        return res
+        console.log(res.rows[0])
     } catch(err){
         console.error(err, err)
     }

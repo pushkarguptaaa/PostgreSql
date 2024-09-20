@@ -1,6 +1,7 @@
 import { Client } from 'pg'
 import { DB_URL } from './config';
 import { createUser, getUser } from './db/user';
+import { createTodo, getTodos, updateTodo } from './db/todo';
 
 export const client = new Client({
     connectionString: DB_URL
@@ -42,5 +43,10 @@ client.connect()
     })
     .catch(err => console.error('Database connection error', err));
 
-// createUser("uhtu", "jfkj", "Pushkar")
-getUser(1)
+// createUser("uhtud", "jfkj", "Sandeep")
+// getUser(3)
+// createTodo(1, "go to gym", "go to gym at 6")
+// updateTodo(1)
+getTodos(1)
+
+
